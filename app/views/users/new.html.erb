@@ -1,0 +1,17 @@
+<h1><strong>THIS IS NEW USERS PAGE</strong></h1>
+
+<%= form_with scope: :user, url: users_path, local: true do |f| %>
+<p>
+<%= f.label :Name %>
+<br>
+<%= f.text_field :name %>
+</p>
+<p>
+<%= f.label :About %>
+<br>
+<%= f.text_area :about %>
+</p>
+<p>
+<%= f.submit %>
+</p>
+<% end %>

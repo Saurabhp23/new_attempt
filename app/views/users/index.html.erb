@@ -1,0 +1,17 @@
+<h1><strong>THIS IS USER LISTING PAGE</strong></h1>
+<table>
+  <thead>
+    <th>Name</th>
+    <th>About</th>
+    <th>Action</th>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.about %></td>
+      <td>Action</td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
