@@ -8,10 +8,17 @@ class UsersController < ApplicationController
   end
 
   def new
+    @user = User.new()
   end
 
   def create
     @user = User.new(params.require(:user).permit(:name, :about))
-    @user.save
+    if @user.save
+      flash[:notice]="user created successfully"
+      redirect_to @user
+    else
+      render 'new'
+    end
+    
   end
 end
