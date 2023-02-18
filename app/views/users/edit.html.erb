@@ -1,0 +1,27 @@
+<h1><strong>THIS IS EDIT PAGE</strong></h1>
+
+<% if @user.errors.any? %>
+<h2>The following errors prevented the article from being saved</h2> 
+  <ul> 
+    <% @user.errors.full_messages.each do |msg| %> 
+      <li><%= msg %></li> 
+    <% end %> 
+  </ul>
+<% end %>
+
+
+<%= form_with(model: @user, local: true) do |f| %>
+<p>
+<%= f.label :Name %>
+<br>
+<%= f.text_field :name %>
+</p>
+<p>
+<%= f.label :About %>
+<br>
+<%= f.text_area :about %>
+</p>
+<p>
+<%= f.submit %>
+</p>
+<% end %>
