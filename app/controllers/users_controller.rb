@@ -28,12 +28,17 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(params.require(:user).permit(:name, :about))
-      flash[:notice] = "Article was updated successfully."
+      flash[:notice] = "User was updated successfully."
       redirect_to @user
     else
       render 'edit'
     end
+  end
 
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to users_path
   end
 
 end

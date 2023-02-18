@@ -1,4 +1,8 @@
 <h1><strong>HELLO THIS IS show PAGE</strong></h1>
 <h1>title z: <%= @user.name %></h1>
-<h1>about z: <%= @user.about %></h1>
+<%# <h1>about z: <%= @user.about %></h1> %>
 
+<p><strong>about: </strong><%= @user.about %></p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Delete', user_path(@user), method: :delete, data: { confirm: "Are you sure?" } %> |
